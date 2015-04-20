@@ -1,6 +1,8 @@
 name="xiangtao"
 sex="falme"
 age="34"
-print name;
-print sex;
-print age;
+height="178"
+print name
+print sex
+print age
+print height
