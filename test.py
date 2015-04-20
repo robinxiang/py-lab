@@ -6,3 +6,5 @@ print name
 print sex
 print age
 print height
+
+print "what's your name"
