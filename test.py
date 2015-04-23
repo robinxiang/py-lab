@@ -1,11 +1,13 @@
-name="xiangtao"
-sex="falme"
-age="34"
-height="178"
-print name
-print sex
-print age
-print height
+def print_info(strName,intHeight,strSex):
+    print "My name is "+strName
+    print "I'm " + strSex
+    print "my height is " + str(intHeight) +"CM"
 
-print "what's your name"
-print "Input your age:"
+def set_info():
+    strName="Thomas Xiang"
+    intHeight=176
+    strSex="Falme"
+    print_info(strName,intHeight,strSex)
+
+
+set_info()
