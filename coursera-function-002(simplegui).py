@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr 28 16:58:52 2015
+
+@author: xiangtao
+"""
+
 # CodeSkulptor runs Python programs in your browser.
 # Click the upper left button to run this simple demo.
 
@@ -5,7 +12,7 @@
 # Some features may work in other browsers, but do not expect
 # full functionality.  It does NOT run in Internet Explorer.
 
-import simplegui
+import SimpleGUICS2Pygame.simpleguics2pygame as simplegui
 
 message = "Welcome!"
 
