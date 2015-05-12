@@ -17,12 +17,16 @@ class LabWindow(QtGui.QWidget):
         btn_input=QtGui.QPushButton(u"输入对话")        
         btn_color=QtGui.QPushButton(u"颜色对话")
         btn_font=QtGui.QPushButton(u"字体对话")
+        btn_file=QtGui.QPushButton(u"文件选择")
+        
         self.label1=QtGui.QLineEdit(self) 
         
         vbox=QtGui.QVBoxLayout() #布局设置
         vbox.addWidget(btn_input) #弹出输入对话框的按钮
         vbox.addWidget(btn_color) #弹出颜色对话框的按钮 
         vbox.addWidget(btn_font) #弹出字体选择对话框
+        vbox.addWidget(btn_file) #弹出文件选择对话框
+        
         vbox.addWidget(self.label1) #显示反馈信息的按钮
         
         self.setLayout(vbox) #设置窗口布局
@@ -36,6 +40,10 @@ class LabWindow(QtGui.QWidget):
 
         #bt_font按钮的click（）信号被激发，调用showFontDialog函数
         self.connect(btn_font,QtCore.SIGNAL('clicked()'),self.ShowFontDialog)
+
+        #bt_file按钮的click（）信号被激发，调用showFileDialog函数
+        self.connect(btn_file,QtCore.SIGNAL('clicked()'),self.ShowFileDialog)
+        
     
     #对话框的显示函数
     def ShowInputDialog(self):
@@ -56,6 +64,11 @@ class LabWindow(QtGui.QWidget):
         if ok:
             self.label1.setFont(font)
             self.label1.setText(u"测试字体")
+            
+    #文件选择对话框函数
+    def ShowFileDialog(self):
+        filename=QtGui.QFileDialog.getOpenFileName(self,u'选择文件','./')
+        self.label1.setText(filename)
             
 app=QtGui.QApplication(sys.argv)
 icon=LabWindow()
